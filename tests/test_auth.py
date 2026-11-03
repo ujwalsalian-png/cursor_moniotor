@@ -6,14 +6,10 @@ def _client():
     return app_module.app.test_client()
 
 
-def test_servers_page_is_visible_without_sign_in():
-    response = _client().get("/")
-    assert response.status_code == 200
-    page = response.get_data(as_text=True)
-    assert "Servers" in page
-    assert "this machine" in page
-    assert "Sign in" in page
-    assert "Sample row only" in page
+def test_unsigned_home_redirects_to_login():
+    response = _client().get("/", follow_redirects=False)
+    assert response.status_code == 302
+    assert response.headers["Location"].endswith("/login")
 
 
 def test_wrong_password_stays_on_the_form():
@@ -47,6 +43,9 @@ def test_sign_out_clears_the_session():
     response = client.get("/logout", follow_redirects=False)
     assert response.status_code == 302
     assert response.headers["Location"].endswith("/login")
-    page = client.get("/").get_data(as_text=True)
+    home = client.get("/", follow_redirects=False)
+    assert home.status_code == 302
+    assert home.headers["Location"].endswith("/login")
+    page = client.get("/login").get_data(as_text=True)
     assert "Sign in" in page
     assert "Sign out" not in page

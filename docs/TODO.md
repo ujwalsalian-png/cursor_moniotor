@@ -20,7 +20,7 @@ Source of truth: [requirements.md](requirements.md).
 - [x] Add `/login` and `/logout`
 - [x] Accept only username `admin`, checked against a Werkzeug `pbkdf2:sha256` hash in local config
 - [x] On success, start a Flask session and open the dashboard. On failure, stay on the form and show one generic error.
-- [ ] Redirect unsigned requests for `/` to `/login`. Sign-out clears the session.
+- [x] Redirect unsigned requests for `/` to `/login`. Sign-out clears the session.
 - [x] Set the session cookie to `HttpOnly` and `SameSite=Lax`
 - [x] Add unit tests for a correct password, a wrong password, and sign-out
 - [x] Security: never store or log the plain password. Do not print it from tests. Keep the app on localhost. `Secure` stays off because this demo is plain HTTP on localhost.
@@ -28,64 +28,64 @@ Source of truth: [requirements.md](requirements.md).
 
 ## 3. Show this host
 
-- [ ] Read hostname and operating system with `psutil` and replace the host placeholder
-- [ ] Add a unit test that checks the shape of that data, not a fixed hostname
-- [ ] Security: read-only calls only. Do not run shell commands.
-- [ ] Documentation: note in the README that the host card is live
+- [x] Read hostname and operating system with `psutil` and replace the host placeholder
+- [x] Add a unit test that checks the shape of that data, not a fixed hostname
+- [x] Security: read-only calls only. Do not run shell commands.
+- [x] Documentation: note in the README that the host card is live
 
 ## 4. CPU
 
-- [ ] Show overall CPU percent and per-core percent
-- [ ] Add a unit test around the collector with a fake `psutil` result
-- [ ] Security: return numbers only. No host commands.
-- [ ] Documentation: note the CPU card in the README
+- [x] Show overall CPU percent and per-core percent
+- [x] Add a unit test around the collector with a fake `psutil` result
+- [x] Security: return numbers only. No host commands.
+- [x] Documentation: note the CPU card in the README
 
 ## 5. Memory
 
-- [ ] Show total, used, available, and percent used
-- [ ] Add a unit test with a fake memory result
-- [ ] Security: return those four figures only
-- [ ] Documentation: note the memory card in the README
+- [x] Show total, used, available, and percent used
+- [x] Add a unit test with a fake memory result
+- [x] Security: return those four figures only
+- [x] Documentation: note the memory card in the README
 
 ## 6. Network
 
-- [ ] Show each interface with bytes sent and bytes received
-- [ ] Add a unit test with a fake interface result
-- [ ] Security: interface counters only. No packet capture and no remote calls.
-- [ ] Documentation: note the network table in the README
+- [x] Show each interface with bytes sent and bytes received
+- [x] Add a unit test with a fake interface result
+- [x] Security: interface counters only. No packet capture and no remote calls.
+- [x] Documentation: note the network table in the README
 
 ## 7. Listening ports
 
-- [ ] Show listening TCP and UDP ports: port, address, protocol, and process name when available
-- [ ] Add a unit test with a fake connections result
-- [ ] Security: use the process name only. Do not include the command line. It can contain secrets.
-- [ ] Documentation: note the ports table in the README
+- [x] Show listening TCP and UDP ports: port, address, protocol, and process name when available
+- [x] Add a unit test with a fake connections result
+- [x] Security: use the process name only. Do not include the command line. It can contain secrets.
+- [x] Documentation: note the ports table in the README
 
 ## 8. Metrics API and refresh
 
-- [ ] Add `GET /api/metrics` with the same host, CPU, memory, network, and port figures
-- [ ] Require a signed-in session. Unsigned calls get `401`.
-- [ ] Update the dashboard from that endpoint about every 5 seconds, and when Refresh is pressed
-- [ ] If one metric cannot be read, show `Unavailable` for that part and still render the rest
-- [ ] Add tests for `401` when signed out, `200` when signed in, and a failed metric becoming `Unavailable`
-- [ ] Security: same-origin fetch only. Escape all values in the page. Do not send stack traces to the browser.
-- [ ] Documentation: list `/api/metrics` and the refresh behavior in the README
+- [x] Add `GET /api/metrics` with the same host, CPU, memory, network, and port figures
+- [x] Require a signed-in session. Unsigned calls get `401`.
+- [x] Update the dashboard from that endpoint about every 5 seconds, and when Refresh is pressed
+- [x] If one metric cannot be read, show `Unavailable` for that part and still render the rest
+- [x] Add tests for `401` when signed out, `200` when signed in, and a failed metric becoming `Unavailable`
+- [x] Security: same-origin fetch only. Escape all values in the page. Do not send stack traces to the browser.
+- [x] Documentation: list `/api/metrics` and the refresh behavior in the README
 
 ## 9. GitHub Actions CI/CD
 
-- [ ] Add `.github/workflows/ci.yml` for push and pull request
-- [ ] CI job: install pinned dependencies and run the unit tests
-- [ ] CD check: boot the app on `127.0.0.1` and request `/login`, then stop it. Do not deploy anywhere else.
-- [ ] Security: set workflow permissions to read-only contents. No secrets in the workflow. Do not bind `0.0.0.0`.
-- [ ] Documentation: state in the README that GitHub Actions runs the tests, and that the demo is still started locally
+- [x] Add `.github/workflows/ci.yml` for push and pull request
+- [x] CI job: install pinned dependencies and run the unit tests
+- [x] CD check: boot the app on `127.0.0.1` and request `/login`, then stop it. Do not deploy anywhere else.
+- [x] Security: set workflow permissions to read-only contents. No secrets in the workflow. Do not bind `0.0.0.0`.
+- [x] Documentation: state in the README that GitHub Actions runs the tests, and that the demo is still started locally
 
 ## 10. Local demo check
 
-- [ ] Run the app locally and sign in as `admin`
-- [ ] Confirm an unsigned visit reaches only the sign-in page
-- [ ] Confirm a wrong password stays on the form
-- [ ] Confirm the dashboard shows live CPU, memory, network, and listening ports for this machine
-- [ ] Confirm Refresh and the 5-second update change the numbers without a shell login
-- [ ] Confirm the page has no control that changes the host
-- [ ] Security: confirm the process listens on `127.0.0.1` only
-- [ ] Documentation: check the README local-run steps against what you just did
+- [x] Run the app locally and sign in as `admin`
+- [x] Confirm an unsigned visit reaches only the sign-in page
+- [x] Confirm a wrong password stays on the form
+- [x] Confirm the dashboard shows live CPU, memory, network, and listening ports for this machine
+- [x] Confirm Refresh and the 5-second update change the numbers without a shell login
+- [x] Confirm the page has no control that changes the host
+- [x] Security: confirm the process listens on `127.0.0.1` only
+- [x] Documentation: check the README local-run steps against what you just did
