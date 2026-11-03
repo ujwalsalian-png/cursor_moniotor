@@ -1,0 +1,140 @@
+body {
+  background: #f4f6f8;
+  color: #1f2933;
+  min-height: 100vh;
+}
+
+.app-header {
+  background: #1b2836;
+}
+
+.app-header-inner {
+  padding-top: 0.95rem;
+}
+
+.brand {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.35rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.brand:hover {
+  color: #fff;
+}
+
+.app-nav {
+  display: flex;
+  gap: 1.35rem;
+  padding: 0.85rem 0 0.75rem;
+}
+
+.app-nav-link {
+  color: #c9d2dc;
+  text-decoration: none;
+}
+
+.app-nav-link:hover,
+.app-nav-link.active {
+  color: #fff;
+}
+
+.page {
+  padding-bottom: 2.5rem;
+  padding-top: 1.6rem;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.page-lead {
+  color: #667085;
+  margin-bottom: 1.1rem;
+}
+
+.btn-add {
+  background: #0f766e;
+  border: 1px solid #0f766e;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-add:hover,
+.btn-add:focus {
+  background: #0c645d;
+  border-color: #0c645d;
+  color: #fff;
+}
+
+.sample-note {
+  background: #fff8ec;
+  border: 1px solid #f0ddb0;
+  border-radius: 0.7rem;
+  color: #3f3a32;
+  margin-bottom: 1rem;
+  padding: 0.95rem 1.1rem;
+}
+
+.server-table {
+  background: #fff;
+  border: 1px solid #e7ebf0;
+  border-radius: 0.7rem;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+  overflow: hidden;
+}
+
+.server-table th {
+  color: #98a2b3;
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.server-table td,
+.server-table th {
+  padding: 0.85rem 0.75rem;
+}
+
+.server-name {
+  max-width: 6.5rem;
+  white-space: normal;
+}
+
+.status-pill {
+  background: #eef1f4;
+  color: #667085;
+  font-weight: 500;
+}
+
+.form-card {
+  background: #fff;
+  border: 1px solid #e7ebf0;
+  border-radius: 0.7rem;
+  max-width: 28rem;
+  padding: 1.1rem 1.15rem 1.2rem;
+}
+
+.detail-list {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem 1.1rem;
+}
+
+.detail-list dt {
+  color: #98a2b3;
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.detail-list dd {
+  margin-bottom: 0;
+}

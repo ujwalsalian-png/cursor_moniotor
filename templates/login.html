@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Sign in · Server monitor{% endblock %}
+
+{% block content %}
+  <h1 class="page-title">Sign in</h1>
+  <p class="page-lead">Demo account only. The password is checked against a hash.</p>
+
+  <form class="form-card" method="post" action="{{ url_for('login') }}" autocomplete="off">
+    {% if error %}
+    <div class="alert alert-danger" role="alert">{{ error }}</div>
+    {% endif %}
+    <div class="mb-3">
+      <label class="form-label" for="username">Username</label>
+      <input class="form-control" id="username" name="username" autocomplete="username" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label" for="password">Password</label>
+      <input class="form-control" id="password" name="password" type="password" autocomplete="current-password" required>
+    </div>
+    <button class="btn btn-add" type="submit">Sign in</button>
+  </form>
+{% endblock %}

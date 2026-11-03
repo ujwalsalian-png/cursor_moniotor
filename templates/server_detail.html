@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}{{ server.name }} · Server monitor{% endblock %}
+
+{% block content %}
+  <h1 class="page-title">{{ server.name }}</h1>
+  <p class="page-lead">Sample figures only. Nothing is read from this machine yet.</p>
+
+  <div class="server-table">
+    <dl class="detail-list mb-0">
+      <div>
+        <dt>Host</dt>
+        <dd>{{ server.host }}</dd>
+      </div>
+      <div>
+        <dt>Status</dt>
+        <dd><span class="badge rounded-pill status-pill">{{ server.status }}</span></dd>
+      </div>
+      <div>
+        <dt>CPU</dt>
+        <dd>{{ server.cpu }}</dd>
+      </div>
+      <div>
+        <dt>Memory</dt>
+        <dd>{{ server.memory }}</dd>
+      </div>
+    </dl>
+  </div>
+  <p class="mt-3 mb-0"><a href="{{ url_for('servers') }}">Back to servers</a></p>
+{% endblock %}
